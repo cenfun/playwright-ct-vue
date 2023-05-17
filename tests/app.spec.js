@@ -10,7 +10,7 @@ test.use({
 });
 
 test.beforeAll(async ({ page }) => {
-
+    // coverage API is chromium only
     if (test.info().project.name === 'chromium') {
         await Promise.all([
             page.coverage.startJSCoverage(),
@@ -27,11 +27,9 @@ test.afterAll(async ({ page }) => {
             page.coverage.stopCSSCoverage()
         ]);
         const coverageList = [... jsCoverage, ... cssCoverage];
-        // .filter((it) => it.source);
         await addCoverageReport(coverageList, test.info());
     }
 });
-
 
 test('should work', async ({ mount }) => {
     const component = await mount(App);
