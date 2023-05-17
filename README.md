@@ -18,7 +18,7 @@ module.exports = defineConfig({
         ['list'],
         ['monocart-reporter', {
             name: 'Playwright CT Vue Report',
-            outputFile: 'playwright-report/index.html',
+            outputFile: 'docs/index.html',
             coverage: {
                 excludeDistFile: true,
                 sourceFilter: (sourceName) => sourceName.search(/\/src\//) !== -1,
@@ -79,8 +79,8 @@ npm run test-ct
 
 ## Preview Coverage Report
 - https://cenfun.github.io/playwright-ct-vue/coverage/
-
-
+- [monocart-reporter](https://github.com/cenfun/monocart-reporter)
+ 
 
 ## Recommended IDE Setup
 
