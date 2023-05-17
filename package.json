@@ -1,0 +1,26 @@
+{
+    "name": "playwright-ct-vue",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+        "test-ct": "playwright test -c playwright-ct.config.js"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "vue": "^3.3.2"
+    },
+    "devDependencies": {
+        "@playwright/experimental-ct-vue": "^1.33.0",
+        "@vitejs/plugin-vue": "^4.2.3",
+        "eslint": "^8.40.0",
+        "eslint-config-plus": "^1.0.6",
+        "eslint-plugin-html": "^7.1.0",
+        "eslint-plugin-vue": "^9.13.0",
+        "monocart-reporter": "^1.6.22",
+        "vite": "^4.3.7"
+    }
+}
