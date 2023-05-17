@@ -30,7 +30,7 @@ module.exports = defineConfig({
         ['list'],
         ['monocart-reporter', {
             name: 'Playwright CT Vue Report',
-            outputFile: 'playwright-report/index.html',
+            outputFile: 'docs/index.html',
             coverage: {
                 excludeDistFile: true,
                 sourceFilter: (sourceName) => sourceName.search(/\/src\//) !== -1,
