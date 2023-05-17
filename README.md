@@ -77,8 +77,10 @@ npm run test-ct
 # The coverage report will be generated: playwright-report/coverage/index.html
 ```
 
+## Preview Coverage Report
+- https://cenfun.github.io/playwright-ct-vue/coverage/
 
-This template should help get you started developing with Vue 3 in Vite.
+
 
 ## Recommended IDE Setup
 
