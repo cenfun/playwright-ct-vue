@@ -6,7 +6,7 @@ import HelloWorld from '../../src/components/HelloWorld.vue';
 const test = ctBase.extend({
     autoTestFixture: [async ({ page }, use) => {
 
-        console.log('autoTestFixture setup...');
+        // console.log('autoTestFixture setup...');
         // coverage API is chromium only
         if (test.info().project.name === 'chromium') {
             await Promise.all([
@@ -17,7 +17,7 @@ const test = ctBase.extend({
 
         await use('autoTestFixture');
 
-        console.log('autoTestFixture teardown...');
+        // console.log('autoTestFixture teardown...');
         if (test.info().project.name === 'chromium') {
             const [jsCoverage, cssCoverage] = await Promise.all([
                 page.coverage.stopJSCoverage(),
@@ -41,3 +41,18 @@ test('HelloWorld should work', async ({ mount, page }) => {
     });
     await expect(component).toContainText('my message');
 });
+
+test('HelloWorld onClick', async ({ mount, page }) => {
+    const component = await mount(HelloWorld, {
+        props: {
+            msg: 'my message'
+        }
+    });
+    await expect(component).toContainText('my message');
+
+    await page.locator('h1').click();
+
+    await expect(component).toContainText('clicked');
+
+});
+

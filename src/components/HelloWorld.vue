@@ -13,6 +13,11 @@ const state = reactive({
 
 });
 
+const onClick = () => {
+    console.log('clicked');
+    state.msg = 'clicked';
+};
+
 const showError = () => {
     // uncovered
 };
@@ -39,8 +44,11 @@ watchEffect(() => {
 
 <template>
   <div class="greetings">
-    <h1 class="green">
-      {{ msg }}
+    <h1
+      class="green"
+      @click="onClick"
+    >
+      {{ state.msg }}
     </h1>
     <h3>
       You've successfully created a project with
