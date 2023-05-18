@@ -5,7 +5,11 @@ const { defineConfig, devices } = require('@playwright/experimental-ct-vue');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-    testDir: './tests',
+
+    testDir: './tests/',
+    // testDir: './tests/components',
+
+    outputDir: './docs',
 
     /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
     snapshotDir: './__snapshots__',
@@ -33,8 +37,14 @@ module.exports = defineConfig({
             outputFile: 'docs/index.html',
             coverage: {
                 excludeDistFile: true,
-                sourceFilter: (sourceName) => sourceName.search(/\/src\//) !== -1,
-                entryFilter: (entry) => entry.type !== 'css'
+                sourceFilter: (sourceName) => {
+                    return sourceName.search(/\/src\//) !== -1;
+                },
+                entryFilter: (entry) => {
+                    // return entry.type !== 'css';
+
+                    return true;
+                }
             }
         }]
     ],
@@ -56,18 +66,18 @@ module.exports = defineConfig({
             use: {
                 ... devices['Desktop Chrome']
             }
-        },
-        {
-            name: 'firefox',
-            use: {
-                ... devices['Desktop Firefox']
-            }
-        },
-        {
-            name: 'webkit',
-            use: {
-                ... devices['Desktop Safari']
-            }
         }
+        // {
+        //     name: 'firefox',
+        //     use: {
+        //         ... devices['Desktop Firefox']
+        //     }
+        // },
+        // {
+        //     name: 'webkit',
+        //     use: {
+        //         ... devices['Desktop Safari']
+        //     }
+        // }
     ]
 });

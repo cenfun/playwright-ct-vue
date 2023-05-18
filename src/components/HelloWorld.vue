@@ -1,24 +1,64 @@
 <script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
+import {
+    reactive, watch, watchEffect
+} from 'vue';
+const props = defineProps({
+    msg: {
+        type: String,
+        required: true
+    }
+});
+
+const state = reactive({
+
+});
+
+const showError = () => {
+    // uncovered
+};
+
+const update = () => {
+    if (state.msg === 'error') {
+        showError();
+    }
+};
+
+watch(() => state.msg, () => {
+
+    console.log('update');
+    update();
+});
+
+watchEffect(() => {
+    console.log('watchEffect', props.msg);
+    state.msg = props.msg;
+});
+
+
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="green">
+      {{ msg }}
+    </h1>
     <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      You've successfully created a project with
+      <a
+        href="https://vitejs.dev/"
+        target="_blank"
+        rel="noopener"
+      >Vite</a> +
+      <a
+        href="https://vuejs.org/"
+        target="_blank"
+        rel="noopener"
+      >Vue 3</a>.
     </h3>
   </div>
 </template>
 
-<style scoped>
+<style>
 h1 {
   font-weight: 500;
   font-size: 2.6rem;
@@ -34,10 +74,4 @@ h3 {
   text-align: center;
 }
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
 </style>

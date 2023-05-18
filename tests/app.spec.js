@@ -31,7 +31,7 @@ test.afterAll(async ({ page }) => {
     }
 });
 
-test('should work', async ({ mount }) => {
+test('App should work', async ({ mount }) => {
     const component = await mount(App);
     await expect(component).toContainText('Vite + Vue');
 });
