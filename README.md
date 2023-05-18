@@ -28,7 +28,7 @@ module.exports = defineConfig({
     ],
 });
 ```
-- step 3, write component tests
+- step 3, collect coverage data
 ```js
 // tests/app.spec.js
 import { test, expect } from '@playwright/experimental-ct-vue';
@@ -116,11 +116,12 @@ test('HelloWorld should work', async ({ mount, page }) => {
 });
 ```
 
-- step 4, run test
+- step 4, write more tests and run test
 ```sh
 npm run test-ct
 
-# The coverage report will be generated: playwright-report/coverage/index.html
+# The coverage report will be generated in your output dir: 
+# docs/coverage/index.html
 ```
 
 ## Preview Coverage Report
