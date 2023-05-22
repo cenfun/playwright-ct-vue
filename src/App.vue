@@ -1,10 +1,18 @@
 <script setup>
+
 import { onMounted } from 'vue';
 import HelloWorld from './components/HelloWorld.vue';
 import TheWelcome from './components/TheWelcome.vue';
 
-const onClick = () => {
+import { foo, bar } from './utils/util.js';
 
+/**
+ * comments
+ */
+
+/* click handler */
+const onClick = () => {
+    // console.log("clicked")
 };
 
 const callFunction = (v) => {
@@ -16,10 +24,16 @@ const callFunction = (v) => {
     }
 };
 
+// init onMounted
 const init = () => {
     for (let i = 0; i < 1000; i++) {
         callFunction(i);
     }
+
+    const v = false;
+
+    return v ? foo() : bar();
+
 };
 
 onMounted(() => {
@@ -52,7 +66,12 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
+
+/**
+  style comments
+*/
+
 header {
   line-height: 1.5;
 }

@@ -33,17 +33,21 @@ module.exports = defineConfig({
     reporter: [
         ['list'],
         ['monocart-reporter', {
-            name: 'Playwright CT Vue Report',
+            name: 'Playwright CT Vue',
             outputFile: 'docs/index.html',
             coverage: {
-                excludeDistFile: true,
-                sourceFilter: (sourceName) => {
-                    return sourceName.search(/\/src\//) !== -1;
-                },
+                // toIstanbul: true,
                 entryFilter: (entry) => {
                     // return entry.type !== 'css';
 
                     return true;
+                },
+                // unpackSourceMap: false,
+                // excludeDistFile: false,
+                sourceFilter: (sourceName) => {
+                    return sourceName.search(/src\//) !== -1;
+                    // console.log(sourceName);
+                    // return true;
                 }
             }
         }]
@@ -66,18 +70,18 @@ module.exports = defineConfig({
             use: {
                 ... devices['Desktop Chrome']
             }
+        },
+        {
+            name: 'firefox',
+            use: {
+                ... devices['Desktop Firefox']
+            }
+        },
+        {
+            name: 'webkit',
+            use: {
+                ... devices['Desktop Safari']
+            }
         }
-        // {
-        //     name: 'firefox',
-        //     use: {
-        //         ... devices['Desktop Firefox']
-        //     }
-        // },
-        // {
-        //     name: 'webkit',
-        //     use: {
-        //         ... devices['Desktop Safari']
-        //     }
-        // }
     ]
 });
