@@ -1,7 +1,8 @@
-# playwright-ct-vue
+> also see [playwright-ct-react](https://github.com/cenfun/playwright-ct-react)
 
-Playwright Component Testing Vue Example
-https://playwright.dev/docs/test-components
+# Playwright Component Testing Vue Example 
+
+see [test-components](https://playwright.dev/docs/test-components)
 
 ## Coverage Report
 - step 1, install monocart-reporter
