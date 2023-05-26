@@ -22,6 +22,7 @@ const test = ctBase.extend({
                 page.coverage.stopCSSCoverage()
             ]);
             const coverageList = [... jsCoverage, ... cssCoverage];
+            console.log(coverageList.map((item) => item.url));
             await addCoverageReport(coverageList, test.info());
         }
 

@@ -9,7 +9,7 @@ module.exports = defineConfig({
     testDir: './tests/',
     // testDir: './tests/components',
 
-    outputDir: './docs',
+    outputDir: './report',
 
     /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
     snapshotDir: './__snapshots__',
@@ -34,9 +34,10 @@ module.exports = defineConfig({
         ['list'],
         ['monocart-reporter', {
             name: 'Playwright CT Vue',
-            outputFile: 'docs/index.html',
+            outputFile: 'report/index.html',
             coverage: {
                 // toIstanbul: true,
+                excludeDistFile: false,
                 entryFilter: (entry) => {
                     // return entry.type !== 'css';
 
@@ -70,18 +71,18 @@ module.exports = defineConfig({
             use: {
                 ... devices['Desktop Chrome']
             }
-        },
-        {
-            name: 'firefox',
-            use: {
-                ... devices['Desktop Firefox']
-            }
-        },
-        {
-            name: 'webkit',
-            use: {
-                ... devices['Desktop Safari']
-            }
         }
+        // {
+        //     name: 'firefox',
+        //     use: {
+        //         ... devices['Desktop Firefox']
+        //     }
+        // },
+        // {
+        //     name: 'webkit',
+        //     use: {
+        //         ... devices['Desktop Safari']
+        //     }
+        // }
     ]
 });
