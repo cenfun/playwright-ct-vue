@@ -27,4 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: ''
     - run: npm i
+    - name: Install Playwright Browsers
+    - run: npx playwright install --with-deps
     - run: npm run test-ct
