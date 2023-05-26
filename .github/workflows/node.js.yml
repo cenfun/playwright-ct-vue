@@ -29,3 +29,9 @@ jobs:
     - run: npm i
     - run: npx playwright install --with-deps
     - run: npm run test-ct
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+          name: docs
+          path: docs/
+          retention-days: 1
