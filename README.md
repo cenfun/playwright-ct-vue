@@ -22,7 +22,7 @@ module.exports = defineConfig({
             outputFile: 'docs/index.html',
             coverage: {
                 excludeDistFile: true,
-                sourceFilter: (sourceName) => sourceName.search(/\/src\//) !== -1,
+                sourceFilter: (sourceName) => sourceName.search(/src\//) !== -1,
                 entryFilter: (entry) => entry.type !== 'css'
             }
         }]
