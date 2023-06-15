@@ -47,8 +47,12 @@ test.beforeAll(async ({ page }) => {
     // coverage API is chromium only
     if (test.info().project.name === 'chromium') {
         await Promise.all([
-            page.coverage.startJSCoverage(),
-            page.coverage.startCSSCoverage()
+            page.coverage.startJSCoverage({
+                resetOnNavigation: false
+            }),
+            page.coverage.startCSSCoverage({
+                resetOnNavigation: false
+            })
         ]);
     }
 
@@ -84,8 +88,12 @@ const test = ctBase.extend({
         // coverage API is chromium only
         if (test.info().project.name === 'chromium') {
             await Promise.all([
-                page.coverage.startJSCoverage(),
-                page.coverage.startCSSCoverage()
+                page.coverage.startJSCoverage({
+                    resetOnNavigation: false
+                }),
+                page.coverage.startCSSCoverage({
+                    resetOnNavigation: false
+                })
             ]);
         }
 
