@@ -21,8 +21,7 @@ module.exports = defineConfig({
             name: 'Playwright CT Vue Report',
             outputFile: 'docs/index.html',
             coverage: {
-                excludeDistFile: true,
-                sourceFilter: (sourceName) => sourceName.search(/src\//) !== -1,
+                sourceFilter: (sourcePath) => sourcePath.search(/src\//) !== -1,
                 entryFilter: (entry) => entry.type !== 'css'
             }
         }]

@@ -35,19 +35,17 @@ module.exports = defineConfig({
         ['monocart-reporter', {
             name: 'Playwright CT Vue',
             outputFile: 'report/index.html',
+            logging: 'debug',
             coverage: {
                 // toIstanbul: true,
-                excludeDistFile: false,
                 entryFilter: (entry) => {
                     // return entry.type !== 'css';
 
                     return true;
                 },
-                // unpackSourceMap: false,
-                // excludeDistFile: false,
-                sourceFilter: (sourceName) => {
-                    return sourceName.search(/src\//) !== -1;
-                    // console.log(sourceName);
+                sourceFilter: (sourcePath) => {
+                    return sourcePath.search(/src\//) !== -1;
+                    // console.log(sourcePath);
                     // return true;
                 }
             }
