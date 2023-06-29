@@ -47,6 +47,15 @@ module.exports = defineConfig({
                     // console.log(sourcePath);
                     // return true;
                 },
+                sourcePath: (sp) => {
+                    const list = sp.split('/');
+
+                    if (sp.startsWith('localhost')) {
+                        list[0] = 'playwright/.cache';
+                    }
+
+                    return list.join('/');
+                },
                 lcov: true
             }
         }]
