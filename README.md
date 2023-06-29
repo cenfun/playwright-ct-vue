@@ -21,8 +21,9 @@ module.exports = defineConfig({
             name: 'Playwright CT Vue Report',
             outputFile: 'docs/index.html',
             coverage: {
+                entryFilter: (entry) => true,
                 sourceFilter: (sourcePath) => sourcePath.search(/src\//) !== -1,
-                entryFilter: (entry) => entry.type !== 'css'
+                lcov: true
             }
         }]
     ],
@@ -129,7 +130,6 @@ test('HelloWorld should work', async ({ mount, page }) => {
 npm run test-ct
 
 # The coverage report will be generated in your output dir: 
-# docs/coverage/index.html
 ```
 
 ## Preview Coverage Report

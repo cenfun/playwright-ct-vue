@@ -20,7 +20,7 @@
         "eslint-config-plus": "^1.0.6",
         "eslint-plugin-html": "^7.1.0",
         "eslint-plugin-vue": "^9.15.1",
-        "monocart-reporter": "^1.7.1",
+        "monocart-reporter": "^1.7.2",
         "vite": "^4.3.9"
     }
 }
