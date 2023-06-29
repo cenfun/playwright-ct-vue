@@ -2,6 +2,8 @@
 
 # Playwright Component Testing Vue Example 
 
+[![](https://img.shields.io/coverallsCoverage/github/cenfun/playwright-ct-vue)](https://coveralls.io/github/cenfun/playwright-ct-vue)
+
 see [test-components](https://playwright.dev/docs/test-components)
 
 ## Coverage Report
@@ -132,11 +134,18 @@ npm run test-ct
 # The coverage report will be generated in your output dir: 
 ```
 
+- step 5, Github action: post `lcov.info` to Coveralls
+```sh
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+```
+see [static.yml](/.github/workflows/static.yml)
+
 ## Preview Coverage Report
 - https://cenfun.github.io/playwright-ct-vue/coverage/
-- [monocart-reporter](https://github.com/cenfun/monocart-reporter)
- 
+- [![](https://img.shields.io/coverallsCoverage/github/cenfun/playwright-ct-vue)](https://coveralls.io/github/cenfun/playwright-ct-vue)
 
+ 
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
