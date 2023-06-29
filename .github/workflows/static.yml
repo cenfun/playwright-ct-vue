@@ -41,6 +41,9 @@ jobs:
       - run: npx playwright install --with-deps
       - run: npm run test-ct
 
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
