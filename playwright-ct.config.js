@@ -50,6 +50,7 @@ module.exports = defineConfig({
                 sourcePath: (sp) => {
                     const list = sp.split('/');
 
+                    // locate to playwright dist path
                     if (sp.startsWith('localhost')) {
                         list[0] = 'playwright/.cache';
                     }
