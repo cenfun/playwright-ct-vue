@@ -3,6 +3,7 @@
 # Playwright Component Testing Vue Example 
 
 [![Coverage Status](https://coveralls.io/repos/github/cenfun/playwright-ct-vue/badge.svg?branch=main)](https://coveralls.io/github/cenfun/playwright-ct-vue?branch=main)
+[![codecov](https://codecov.io/gh/cenfun/playwright-ct-vue/branch/main/graph/badge.svg?token=D5LIE37F1K)](https://codecov.io/gh/cenfun/playwright-ct-vue)
 
 see [test-components](https://playwright.dev/docs/test-components)
 
@@ -134,18 +135,27 @@ npm run test-ct
 # The coverage report will be generated in your output dir: 
 ```
 
-- step 5, Github action: post `lcov.info` to Coveralls
+- step 5, Github action for Coveralls
 ```sh
       - name: Coveralls
         uses: coverallsapp/github-action@v2
 ```
+Or Codecov
+```sh
+    - name: Codecov
+        uses: codecov/codecov-action@v3
+```
+
 see [static.yml](/.github/workflows/static.yml)
 
 ## Preview Coverage Report
 - https://cenfun.github.io/playwright-ct-vue/coverage/
 - [![Coverage Status](https://coveralls.io/repos/github/cenfun/playwright-ct-vue/badge.svg?branch=main)](https://coveralls.io/github/cenfun/playwright-ct-vue?branch=main)
+- [![codecov](https://codecov.io/gh/cenfun/playwright-ct-vue/branch/main/graph/badge.svg?token=D5LIE37F1K)](https://codecov.io/gh/cenfun/playwright-ct-vue)
 
- 
+ ![](https://codecov.io/gh/cenfun/playwright-ct-vue/branch/main/graphs/tree.svg?token=D5LIE37F1K)
+
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
