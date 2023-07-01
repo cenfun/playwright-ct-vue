@@ -2,7 +2,7 @@
 
 # Playwright Component Testing Vue Example 
 
-[![](https://img.shields.io/coverallsCoverage/github/cenfun/playwright-ct-vue)](https://coveralls.io/github/cenfun/playwright-ct-vue)
+[![Coverage Status](https://coveralls.io/repos/github/cenfun/playwright-ct-vue/badge.svg?branch=main)](https://coveralls.io/github/cenfun/playwright-ct-vue?branch=main)
 
 see [test-components](https://playwright.dev/docs/test-components)
 
@@ -143,7 +143,7 @@ see [static.yml](/.github/workflows/static.yml)
 
 ## Preview Coverage Report
 - https://cenfun.github.io/playwright-ct-vue/coverage/
-- [![](https://img.shields.io/coverallsCoverage/github/cenfun/playwright-ct-vue)](https://coveralls.io/github/cenfun/playwright-ct-vue)
+- [![Coverage Status](https://coveralls.io/repos/github/cenfun/playwright-ct-vue/badge.svg?branch=main)](https://coveralls.io/github/cenfun/playwright-ct-vue?branch=main)
 
  
 ## Recommended IDE Setup
