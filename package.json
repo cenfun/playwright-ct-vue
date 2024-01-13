@@ -11,16 +11,16 @@
     },
     "license": "MIT",
     "dependencies": {
-        "vue": "^3.3.4"
+        "vue": "^3.4.13"
     },
     "devDependencies": {
-        "@playwright/experimental-ct-vue": "^1.35.1",
-        "@vitejs/plugin-vue": "^4.2.3",
-        "eslint": "^8.43.0",
+        "@playwright/experimental-ct-vue": "^1.40.1",
+        "@vitejs/plugin-vue": "^5.0.3",
+        "eslint": "^8.56.0",
         "eslint-config-plus": "^1.0.6",
         "eslint-plugin-html": "^7.1.0",
-        "eslint-plugin-vue": "^9.15.1",
-        "monocart-reporter": "^1.7.2",
-        "vite": "^4.3.9"
+        "eslint-plugin-vue": "^9.20.1",
+        "monocart-reporter": "^2.2.3",
+        "vite": "^5.0.11"
     }
 }
