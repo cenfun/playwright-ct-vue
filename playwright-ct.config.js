@@ -57,6 +57,10 @@ module.exports = defineConfig({
 
                     return list.join('/');
                 },
+                reports: [
+                    'v8',
+                    'codecov'
+                ],
                 lcov: true
             }
         }]
