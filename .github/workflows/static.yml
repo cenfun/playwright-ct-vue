@@ -39,7 +39,7 @@ jobs:
           cache: ''
       - run: npm i
       - run: npx playwright install --with-deps
-      - run: npm run test-ct
+      - run: npm run test
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
