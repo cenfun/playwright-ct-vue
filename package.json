@@ -7,7 +7,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-        "test-ct": "playwright test -c playwright-ct.config.js"
+        "test": "playwright test -c playwright-ct.config.js"
     },
     "license": "MIT",
     "dependencies": {
@@ -20,7 +20,7 @@
         "eslint-config-plus": "^1.0.6",
         "eslint-plugin-html": "^7.1.0",
         "eslint-plugin-vue": "^9.20.1",
-        "monocart-reporter": "^2.2.4",
+        "monocart-reporter": "^2.2.5",
         "vite": "^5.0.12"
     }
 }
