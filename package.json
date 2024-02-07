@@ -14,13 +14,13 @@
         "vue": "^3.4.15"
     },
     "devDependencies": {
-        "@playwright/experimental-ct-vue": "^1.41.1",
+        "@playwright/experimental-ct-vue": "^1.41.2",
         "@vitejs/plugin-vue": "^5.0.3",
         "eslint": "^8.56.0",
         "eslint-config-plus": "^1.0.6",
         "eslint-plugin-html": "^7.1.0",
-        "eslint-plugin-vue": "^9.20.1",
-        "monocart-reporter": "^2.2.5",
+        "eslint-plugin-vue": "^9.21.1",
+        "monocart-reporter": "^2.3.1",
         "vite": "^5.0.12"
     }
 }
