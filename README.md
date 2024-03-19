@@ -130,7 +130,7 @@ test('HelloWorld should work', async ({ mount, page }) => {
 
 - step 4, write more tests and run test
 ```sh
-npm run test-ct
+npm run test
 
 # The coverage report will be generated in your output dir: 
 ```
