@@ -33,56 +33,12 @@ module.exports = defineConfig({
 });
 ```
 - step 3, collect coverage data
+
+Collect coverage with playwright [Automatic fixtures](https://playwright.dev/docs/test-fixtures#automatic-fixtures)
 ```js
-// tests/app.spec.js
-import { test, expect } from '@playwright/experimental-ct-vue';
-import { addCoverageReport } from 'monocart-reporter';
-
-import App from '../src/App.vue';
-
-test.use({
-    viewport: {
-        width: 500, height: 500
-    }
-});
-
-test.beforeAll(async ({ page }) => {
-    // coverage API is chromium only
-    if (test.info().project.name === 'chromium') {
-        await Promise.all([
-            page.coverage.startJSCoverage({
-                resetOnNavigation: false
-            }),
-            page.coverage.startCSSCoverage({
-                resetOnNavigation: false
-            })
-        ]);
-    }
-
-});
-
-test.afterAll(async ({ page }) => {
-    if (test.info().project.name === 'chromium') {
-        const [jsCoverage, cssCoverage] = await Promise.all([
-            page.coverage.stopJSCoverage(),
-            page.coverage.stopCSSCoverage()
-        ]);
-        const coverageList = [... jsCoverage, ... cssCoverage];
-        await addCoverageReport(coverageList, test.info());
-    }
-});
-
-test('should work', async ({ mount }) => {
-    const component = await mount(App);
-    await expect(component).toContainText('Vite + Vue');
-});
-```
-You can also replace beforeAll and afterAll with [Automatic fixtures](https://playwright.dev/docs/test-fixtures#automatic-fixtures)
-```js
+// fixtures.js
 import { test as ctBase, expect } from '@playwright/experimental-ct-vue';
 import { addCoverageReport } from 'monocart-reporter';
-
-import HelloWorld from '../../src/components/HelloWorld.vue';
 
 const test = ctBase.extend({
     autoTestFixture: [async ({ page }, use) => {
@@ -109,6 +65,7 @@ const test = ctBase.extend({
                 page.coverage.stopCSSCoverage()
             ]);
             const coverageList = [... jsCoverage, ... cssCoverage];
+            console.log(coverageList.map((item) => item.url));
             await addCoverageReport(coverageList, test.info());
         }
 
@@ -118,14 +75,21 @@ const test = ctBase.extend({
     }]
 });
 
-test('HelloWorld should work', async ({ mount, page }) => {
-    const component = await mount(HelloWorld, {
-        props: {
-            msg: 'my message'
-        }
-    });
-    await expect(component).toContainText('my message');
+export { test, expect };
+
+```
+
+```js
+// App.spec.js
+import { test, expect } from './fixtures.js';
+
+import App from '../src/App.vue';
+
+test('App should work', async ({ mount }) => {
+    const component = await mount(App);
+    await expect(component).toContainText('Vite + Vue');
 });
+
 ```
 
 - step 4, write more tests and run test
@@ -135,18 +99,12 @@ npm run test
 # The coverage report will be generated in your output dir: 
 ```
 
-- step 5, Github action for Coveralls
-```sh
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2
-```
-Or Codecov
+- step 5, Github action for Codecov
 ```sh
     - name: Codecov
         uses: codecov/codecov-action@v3
 ```
-
-see [static.yml](/.github/workflows/static.yml)
+See [static.yml](/.github/workflows/static.yml)
 
 ## Preview Coverage Report
 - https://cenfun.github.io/playwright-ct-vue/coverage/
